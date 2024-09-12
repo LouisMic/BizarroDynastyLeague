@@ -1,0 +1,2 @@
+class Nflteam < ApplicationRecord
+end

@@ -1,0 +1,14 @@
+<%= simple_form_for :filter, url: players_waivers_path, method: :get, html: { class: "d-flex flex-row" } do |f| %>
+  <%= f.button :submit, "QB", name: "position", value: "QB", class: "btn btn-outline-primary mx-1" %>
+  <%= f.button :submit, "HB", name: "position", value: "RB", class: "btn btn-outline-primary mx-1" %>
+  <%= f.button :submit, "WR", name: "position", value: "WR", class: "btn btn-outline-primary mx-1" %>
+  <%= f.button :submit, "TE", name: "position", value: "TE", class: "btn btn-outline-primary mx-1" %>
+  <%= f.button :submit, "T", name: "position", value: "T", class: "btn btn-outline-primary mx-1" %>
+  <%= f.button :submit, "G", name: "position", value: "G", class: "btn btn-outline-primary mx-1" %>
+  <%= f.button :submit, "C", name: "position", value: "C", class: "btn btn-outline-primary mx-1" %>
+  <%= f.button :submit, "DI", name: "position", value: "DI", class: "btn btn-outline-primary mx-1" %>
+  <%= f.button :submit, "ED", name: "position", value: "ED", class: "btn btn-outline-primary mx-1" %>
+  <%= f.button :submit, "LB", name: "position", value: "LB", class: "btn btn-outline-primary mx-1" %>
+  <%= f.button :submit, "CB", name: "position", value: "CB", class: "btn btn-outline-primary mx-1" %>
+  <%= f.button :submit, "S", name: "position", value: "S", class: "btn btn-outline-primary mx-1" %>
+<% end %>

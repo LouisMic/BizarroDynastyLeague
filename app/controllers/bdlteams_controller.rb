@@ -1,0 +1,2 @@
+class BdlteamsController < ApplicationController
+end

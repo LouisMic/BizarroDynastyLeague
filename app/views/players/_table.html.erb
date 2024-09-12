@@ -1,0 +1,22 @@
+<div class="d-flex flex-column" data-controller="sort">
+  <table>
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Position</th>
+        <th>NFL Team</th>
+        <%= render "headers", statistics: @statistics.pluck(:name) if @position %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @players.each do |player| %>
+        <tr>
+          <th><%= player.name %></th>
+          <td><%= player.position.name %></th>
+          <td><%= player.nflteam.abbreviation %></th>
+          <%= render "body", player: player, player_stats: @player_stats if @position%>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

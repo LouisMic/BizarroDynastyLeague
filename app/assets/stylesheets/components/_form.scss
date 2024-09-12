@@ -1,0 +1,14 @@
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  select.form-control{display:inline-block}
+
+  label {
+    grid-column: 1 / 4;
+  }
+
+  select {
+    grid-column: 1 / 4;
+  }
+}

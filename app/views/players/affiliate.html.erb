@@ -1,0 +1,15 @@
+<% if @players.empty? %>
+  <div class="alert alert-info">
+    <strong>Info!</strong> There are no players to affiliate.
+  </div>
+<% else %>
+  <%= simple_form_for :players, method: :patch, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
+    <% @players.each_with_index do |player, index| %>
+        <%= f.fields_for "#{player.id}", player do |p| %>
+          <%= p.input :bdlteam_name, label: "#{player.name} - #{player.position.name}", collection: @teams%>
+        <% end %>
+      </div>
+    <% end %>
+    <%= f.submit "Update all players", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
