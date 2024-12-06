@@ -1,0 +1,4 @@
+<% statistics.each do |stat| %>
+  <% stat_for_player = @players_stats_hash[player.id]&.find { |ps| ps.statistic == stat } %>
+  <td><%= stat_for_player.nil? ? 0 : stat_for_player.value %></td>
+<% end %>

@@ -5,7 +5,8 @@ class Player < ApplicationRecord
   has_many :player_stats
 
   scope :to_check, -> { where(bdlteam: Bdlteam.find_by(city: "To Check")).reject(&:special_teams).sort_by(&:name)}
-  scope :free_agents, -> { where(bdlteam: Bdlteam.find_by(city: "Free Agent")).reject(&:special_teams).sort_by(&:name)}
+  scope :free_agents, -> { where(bdlteam: Bdlteam.find_by(city: "Free Agent"))}
+  scope :by_position, ->(position) { where(position: position) }
 
   def bdlteam_name
     bdlteam.city
@@ -19,7 +20,13 @@ class Player < ApplicationRecord
     player_stats.select{ |ps| ["Snaps", "Passing Snaps", "Attempts"].include?(ps.statistic.name) && ps.year == 2024 }.pluck(:value).join.to_f
   end
 
-  def stat(stat)
-    player_stats.select{ |ps| ps.statistic.name == stat && ps.year == 2024 }.pluck(:value).join.to_f
+  scope :sorted_by_stat, ->(stat_name) {
+    joins(player_stats: :statistic)
+      .where(player_stats: { week: 8, year: 2024 }, statistics: { name: stat_name })
+      .order('player_stats.value DESC')
+  }
+
+  def irlteam
+    nflteam.abbreviation
   end
 end

@@ -1,6 +1,6 @@
-<%= simple_form_for :filter, url: players_waivers_path, method: :get, html: { class: "d-flex flex-row" } do |f| %>
+<%= simple_form_for :filter, url: url, method: :get, html: { class: "d-flex flex-row" } do |f| %>
   <%= f.button :submit, "QB", name: "position", value: "QB", class: "btn btn-outline-primary mx-1" %>
-  <%= f.button :submit, "HB", name: "position", value: "RB", class: "btn btn-outline-primary mx-1" %>
+  <%= f.button :submit, "HB", name: "position", value: "HB", class: "btn btn-outline-primary mx-1" %>
   <%= f.button :submit, "WR", name: "position", value: "WR", class: "btn btn-outline-primary mx-1" %>
   <%= f.button :submit, "TE", name: "position", value: "TE", class: "btn btn-outline-primary mx-1" %>
   <%= f.button :submit, "T", name: "position", value: "T", class: "btn btn-outline-primary mx-1" %>

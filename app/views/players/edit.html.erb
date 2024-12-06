@@ -1,0 +1,4 @@
+<%= simple_form_for @player do |f| %>
+  <%= f.input :bdlteam_name, label: "#{@player.name} - #{@player.position.name}", collection: @teams %>
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>
