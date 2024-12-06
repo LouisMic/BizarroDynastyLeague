@@ -1,6 +1,6 @@
 require 'csv'
 
-# Initialize Users
+# # Initialize Users
 # tl = User.create!(email: 'tl@bdl.com', password: 'password', password_confirmation: 'password')
 # ir = User.create!(email: 'ir@bdl.com', password: 'password', password_confirmation: 'password')
 # blue = User.create!(email: 'blue@bdl.com', password: 'password', password_confirmation: 'password')
@@ -20,7 +20,7 @@ require 'csv'
 # empty = User.create!(email: 'empty@bdl.com', password: 'password', password_confirmation: 'password')
 # puts "Created #{User.count} users (should be 17)"
 
-# Initialize BDL Teams
+# # Initialize BDL Teams
 # Bdlteam.create!(city: 'Cwmfelinfach', nickname: 'Cwmfelinfach', user: tl)
 # Bdlteam.create!(city: 'Las Vegas', nickname: 'Bangers', user: ir)
 # Bdlteam.create!(city: 'Cancun', nickname: 'Kaiju', user: blue)
@@ -39,10 +39,10 @@ require 'csv'
 # Bdlteam.create!(city: 'Greenland', nickname: 'Polar Bears', user: pickle)
 # Bdlteam.create!(city: 'Free Agent', nickname: '', user: empty)
 # Bdlteam.create!(city: 'Retired', nickname: '', user: empty)
-# # Bdlteam.create!(city: 'To Check', nickname: '', user: empty)
-# puts "Created #{Bdlteam.count} BDL teams (should be 18)"
+# Bdlteam.create!(city: 'To Check', nickname: '', user: empty)
+# puts "Created #{Bdlteam.count} BDL teams (should be 19)"
 
-# Initialize Positions
+# # Initialize Positions
 # Position.create!(name: 'QB', fa_grouping: 1, group: 1)
 # Position.create!(name: 'HB', fa_grouping: 2, group: 1)
 # Position.create!(name: 'FB', fa_grouping: 2, group: 1)
@@ -59,9 +59,9 @@ require 'csv'
 # Position.create!(name: 'K', fa_grouping: 4, group: 3)
 # Position.create!(name: 'P', fa_grouping: 4, group: 3)
 # Position.create!(name: 'LS', fa_grouping: 4, group: 3)
-# puts "Created #{Position.count} positions (should be 13)"
+# puts "Created #{Position.count} positions (should be 16)"
 
-# Initialize NFL Teams
+# # Initialize NFL Teams
 # Nflteam.destroy_all
 # csv_file_path = 'db/seeds/nflteams.csv'
 # CSV.foreach(csv_file_path, headers: :first_row) do |row|
@@ -74,7 +74,7 @@ require 'csv'
 # fa = Nflteam.create!(abbreviation: 'FA', city: 'Free Agent', nickname: '')
 # puts "Created #{Nflteam.count} NFL teams (should be 33) and first city is #{Nflteam.first.city}"
 
-# Initialize Players
+# # Initialize Players
 # Player.destroy_all
 # file_path = 'db/seeds/players.csv'
 # CSV.foreach(file_path, headers: :first_row) do |row|
@@ -88,22 +88,22 @@ require 'csv'
 # end
 # puts "Created #{Player.count} players (should be 1880)"
 
-# Initialize Statistics
+# # Initialize Statistics
 # Statistic.destroy_all
 
-  # passing stats
-  # Statistic.create!(path: "passing_summary.csv", title: "attempts", name: 'Attempts', position: Position.find_by(name: 'QB'))
-  # Statistic.create!(path: "passing_summary.csv", title: "yards", name: 'Passing Yards', position: Position.find_by(name: 'QB'))
-  # Statistic.create!(path: "passing_summary.csv", title: "touchdowns", name: 'Passing Touchdowns', position: Position.find_by(name: 'QB'))
-  # Statistic.create!(path: "passing_summary.csv", title: "interceptions", name: 'Interceptions', position: Position.find_by(name: 'QB'))
-  # Statistic.create!(path: "passing_summary.csv", title: "completion_percent", name: 'Completion Percentage', position: Position.find_by(name: 'QB'))
-  # Statistic.create!(path: "passing_summary.csv", title: "avg_depth_of_target", name: 'ADOT', position: Position.find_by(name: 'QB'))
-  # Statistic.create!(path: "passing_summary.csv", title: "avg_time_to_throw", name: 'Average Time to Throw', position: Position.find_by(name: 'QB'))
-  # Statistic.create!(path: "passing_summary.csv", title: "pressure_to_sack_rate", name: 'Pressure to sack Percentage', position: Position.find_by(name: 'QB'))
-  # Statistic.create!(path: "passing_summary.csv", title: "ypa", name: 'Yards Per Attempt', position: Position.find_by(name: 'QB'))
-  # Statistic.create!(path: "passing_summary.csv", title: "grades_pass", name: 'Passing Grade', position: Position.find_by(name: 'QB'))
+#   # passing stats
+#   Statistic.create!(path: "passing_summary.csv", title: "attempts", name: 'Attempts', position: Position.find_by(name: 'QB'))
+#   Statistic.create!(path: "passing_summary.csv", title: "yards", name: 'Passing Yards', position: Position.find_by(name: 'QB'))
+#   Statistic.create!(path: "passing_summary.csv", title: "touchdowns", name: 'Passing Touchdowns', position: Position.find_by(name: 'QB'))
+#   Statistic.create!(path: "passing_summary.csv", title: "interceptions", name: 'Interceptions', position: Position.find_by(name: 'QB'))
+#   Statistic.create!(path: "passing_summary.csv", title: "completion_percent", name: 'Completion Percentage', position: Position.find_by(name: 'QB'))
+#   Statistic.create!(path: "passing_summary.csv", title: "avg_depth_of_target", name: 'ADOT', position: Position.find_by(name: 'QB'))
+#   Statistic.create!(path: "passing_summary.csv", title: "avg_time_to_throw", name: 'Average Time to Throw', position: Position.find_by(name: 'QB'))
+#   Statistic.create!(path: "passing_summary.csv", title: "pressure_to_sack_rate", name: 'Pressure to sack Percentage', position: Position.find_by(name: 'QB'))
+#   Statistic.create!(path: "passing_summary.csv", title: "ypa", name: 'Yards Per Attempt', position: Position.find_by(name: 'QB'))
+#   Statistic.create!(path: "passing_summary.csv", title: "grades_pass", name: 'Passing Grade', position: Position.find_by(name: 'QB'))
 
-  # rushing stats
+#   # rushing stats
 #   Statistic.create!(path: "rushing_summary.csv", title: "attempts", name: 'Attempts', position: Position.find_by(name: 'HB'))
 #   Statistic.create!(path: "rushing_summary.csv", title: "attempts", name: 'Attempts', position: Position.find_by(name: 'FB'))
 #   Statistic.create!(path: "rushing_summary.csv", title: "avoided_tackles", name: 'Missed Tackles', position: Position.find_by(name: 'QB'))
@@ -137,10 +137,10 @@ require 'csv'
 #   Statistic.create!(path: "rushing_summary.csv", title: "ypa", name: 'Yards per Carry', position: Position.find_by(name: 'TE'))
 #   Statistic.create!(path: "rushing_summary.csv", title: "yco_attempt", name: 'Yards after Contact per attempt', position: Position.find_by(name: 'TE'))
 
-#   # receiving stats
-#   Statistic.create!(path: "receiving_summary.csv", title: "pass_plays", name: 'Passing Snaps', position: Position.find_by(name: 'WR'))
+# #   # receiving stats
 #   Statistic.create!(path: "receiving_summary.csv", title: "pass_plays", name: 'Passing Snaps', position: Position.find_by(name: 'TE'))
 #   Statistic.create!(path: "receiving_summary.csv", title: "yards", name: 'Receiving Yards', position: Position.find_by(name: 'WR'))
+#   Statistic.create!(path: "receiving_summary.csv", title: "pass_plays", name: 'Passing Snaps', position: Position.find_by(name: 'WR'))
 #   Statistic.create!(path: "receiving_summary.csv", title: "touchdowns", name: 'Receiving Touchdowns', position: Position.find_by(name: 'WR'))
 #   Statistic.create!(path: "receiving_summary.csv", title: "receptions", name: 'Receptions', position: Position.find_by(name: 'WR'))
 #   Statistic.create!(path: "receiving_summary.csv", title: "caught_percent", name: 'Catch Rate', position: Position.find_by(name: 'WR'))
@@ -190,7 +190,7 @@ require 'csv'
 #   Statistic.create!(path: "receiving_summary.csv", title: "contested_receptions", name: 'Contested catches', position: Position.find_by(name: 'FB'))
 #   Statistic.create!(path: "receiving_summary.csv", title: "drop_rate", name: 'Drops rate', position: Position.find_by(name: 'FB'))
 
-#   # blocking stats
+# #   # blocking stats
 #   Statistic.create!(path: "offense_blocking.csv", title: "grades_pass_block", name: 'Pass Blocking Grade', position: Position.find_by(name: 'T'))
 #   Statistic.create!(path: "offense_blocking.csv", title: "grades_pass_block", name: 'Pass Blocking Grade', position: Position.find_by(name: 'G'))
 #   Statistic.create!(path: "offense_blocking.csv", title: "grades_pass_block", name: 'Pass Blocking Grade', position: Position.find_by(name: 'C'))
@@ -221,7 +221,7 @@ require 'csv'
 #   Statistic.create!(path: "offense_blocking.csv", title: "snap_counts_pass_block", name: 'Snaps Pass', position: Position.find_by(name: 'T'))
 
 
-#   # defensive stats
+# #   # defensive stats
 # Statistic.create!(path: "defense_summary.csv", title: "snap_counts_defense", name: 'Snaps', position: Position.find_by(name: 'ED'))
 # Statistic.create!(path: "defense_summary.csv", title: "snap_counts_defense", name: 'Snaps', position: Position.find_by(name: 'DI'))
 # Statistic.create!(path: "defense_summary.csv", title: "snap_counts_defense", name: 'Snaps', position: Position.find_by(name: 'LB'))
@@ -321,6 +321,8 @@ require 'csv'
 
 
 # 2024 players stats
+
+
 
 week = 12
 PlayerStat.where("week < ? AND year = ?", week - 1, 2024).destroy_all if week > 2
