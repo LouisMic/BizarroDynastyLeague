@@ -322,7 +322,7 @@ require 'csv'
 
 # 2024 players stats
 
-week = 8
+week = 12
 PlayerStat.where("week < ? AND year = ?", week - 1, 2024).destroy_all if week > 2
 week2 = StatsUpdate.new(week, 2024)
 week2.update
