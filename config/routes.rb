@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   resources :bdlteams, only: [:show]
   get "players/waivers", to: "players#waivers"
   get "players/affiliate", to: "players#affiliate"
-  get "players/updateall", to: "players#update_all"
 end

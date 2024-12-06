@@ -1,0 +1,3 @@
+<% statistics.each do |stat| %>
+  <th><%= link_to "#{stat}", bdlteam_path(@bdlteam, sort: stat, position: position), class: "text-decoration-none text-body" %></th>
+<% end %>

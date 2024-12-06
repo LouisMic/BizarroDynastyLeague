@@ -1,0 +1,22 @@
+<div class="d-flex flex-column" data-controller="sort">
+  <table>
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Position</th>
+        <th>NFL Team</th>
+        <%= render "headers", statistics: statistics.pluck(:name), position: position.name if position %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @players.each do |player| %>
+        <tr>
+          <th><%= link_to player.name, edit_player_path(player), class: "text-decoration-none text-body" %></th>
+          <td><%= player.position.name %></th>
+          <td><%= player.irlteam %></th>
+          <%= render "body", player: player, player_stats: player_stats, statistics: statistics if position%>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

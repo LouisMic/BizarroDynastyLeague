@@ -216,6 +216,10 @@ require 'csv'
 #   Statistic.create!(path: "offense_blocking.csv", title: "penalties", name: 'Penalties', position: Position.find_by(name: 'T'))
 #   Statistic.create!(path: "offense_blocking.csv", title: "penalties", name: 'Penalties', position: Position.find_by(name: 'G'))
 #   Statistic.create!(path: "offense_blocking.csv", title: "penalties", name: 'Penalties', position: Position.find_by(name: 'C'))
+#   Statistic.create!(path: "offense_blocking.csv", title: "snap_counts_pass_block", name: 'Snaps Pass', position: Position.find_by(name: 'C'))
+#   Statistic.create!(path: "offense_blocking.csv", title: "snap_counts_pass_block", name: 'Snaps Pass', position: Position.find_by(name: 'G'))
+#   Statistic.create!(path: "offense_blocking.csv", title: "snap_counts_pass_block", name: 'Snaps Pass', position: Position.find_by(name: 'T'))
+
 
 # #   # defensive stats
 # Statistic.create!(path: "defense_summary.csv", title: "snap_counts_defense", name: 'Snaps', position: Position.find_by(name: 'ED'))
@@ -274,14 +278,51 @@ require 'csv'
 # Statistic.create!(path: "defense_summary.csv", title: "touchdowns", name: 'Touchdown allowed', position: Position.find_by(name: 'S'))
 # Statistic.create!(path: "defense_summary.csv", title: "yards", name: 'Yards allowed', position: Position.find_by(name: 'S'))
 # Statistic.create!(path: "defense_summary.csv", title: "yards_per_reception", name: 'Yards per reception', position: Position.find_by(name: 'S'))
+# Statistic.create!(path: "defense_summary.csv", title: "snap_counts_pass_rush", name: 'Rush Snaps', position: Position.find_by(name: 'DI'))
+# Statistic.create!(path: "defense_summary.csv", title: "snap_counts_pass_rush", name: 'Rush Snaps', position: Position.find_by(name: 'ED'))
+
 
 # init = StatsUpdate.new(18, 2023)
 # # puts init.files
 # init.update
 # puts "Created #{PlayerStat.count} player statistics. There are #{Player.count} players in the database."
 
+
+# #Add weekly stats
+# Statistic.create!(name: 'Attempts S', position: Position.find_by(name: 'QB'))
+# Statistic.create!(name: 'Rushing Yards S', position: Position.find_by(name: 'QB'))
+# Statistic.create!(name: 'Rushing Yards S', position: Position.find_by(name: 'HB'))
+# Statistic.create!(name: 'Rushing Yards S', position: Position.find_by(name: 'FB'))
+# Statistic.create!(name: 'Rushing Yards S', position: Position.find_by(name: 'WR'))
+# Statistic.create!(name: 'Rushing Yards S', position: Position.find_by(name: 'TE'))
+# Statistic.create!(name: 'Receiving Yards S', position: Position.find_by(name: 'HB'))
+# Statistic.create!(name: 'Receiving Yards S', position: Position.find_by(name: 'FB'))
+# Statistic.create!(name: 'Receiving Yards S', position: Position.find_by(name: 'TE'))
+# Statistic.create!(name: 'Receiving Yards S', position: Position.find_by(name: 'WR'))
+# Statistic.create!(name: 'Snaps S', position: Position.find_by(name: 'T'))
+# Statistic.create!(name: 'Snaps S', position: Position.find_by(name: 'G'))
+# Statistic.create!(name: 'Snaps S', position: Position.find_by(name: 'C'))
+# Statistic.create!(name: 'Snaps S', position: Position.find_by(name: 'ED'))
+# Statistic.create!(name: 'Snaps S', position: Position.find_by(name: 'DI'))
+# Statistic.create!(name: 'Snaps S', position: Position.find_by(name: 'LB'))
+# Statistic.create!(name: 'Snaps S', position: Position.find_by(name: 'CB'))
+# Statistic.create!(name: 'Snaps S', position: Position.find_by(name: 'S'))
+
+
+# # Creating custom stats
+# Statistic.create!(name: 'YPT', position: Position.find_by(name: 'LB'))
+# Statistic.create!(name: 'YPT', position: Position.find_by(name: 'CB'))
+# Statistic.create!(name: 'YPT', position: Position.find_by(name: 'S'))
+# Statistic.create!(name: 'Pressure %', position: Position.find_by(name: 'DI'))
+# Statistic.create!(name: 'Pressure %', position: Position.find_by(name: 'ED'))
+# Statistic.create!(name: 'Pressure %', position: Position.find_by(name: 'T'))
+# Statistic.create!(name: 'Pressure %', position: Position.find_by(name: 'G'))
+# Statistic.create!(name: 'Pressure %', position: Position.find_by(name: 'C'))
+
+
 # 2024 players stats
 
+<<<<<<< HEAD
 week = 12
 PlayerStat.where("week < ? AND year = ?", week - 1, 2024).destroy_all if week > 2
 week1 = StatsUpdate.new(week, 2024)
@@ -289,3 +330,10 @@ week1.update
 puts "Created #{PlayerStat.count} player statistics. There are #{Player.count} players in the database."
 puts Player.find_by(name: "Patrick Mahomes").bdlteam
 puts Player.find_by(name: "Patrick Mahomes").player_stats.where(year: 2024, week: week).map(&:stats)
+=======
+week = 8
+PlayerStat.where("week < ? AND year = ?", week - 1, 2024).destroy_all if week > 2
+week2 = StatsUpdate.new(week, 2024)
+week2.update
+puts "Created #{PlayerStat.count} player statistics. There are #{Player.count} players in the database."
+>>>>>>> 59c3138ebf45ca79cf4f8232d283711d0adbc094
